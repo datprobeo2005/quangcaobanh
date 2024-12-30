@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Island+Moments&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <title>Paris Gâteaux</title>
+</head>
+<style>
+    .card{
+        border: 4px solid #f4bf01;
+        position: relative;
+        overflow: hidden;
+    }
+    .card img {
+        object-fit: cover;
+        width: 150%;
+        height: 300px;
+        transition: transform 0.5s ease;
+    }
+    .card img:hover{
+        transform: scale(1.1);
+    }
+    .btn-custom {
+        display: inline-block; 
+        line-height: 20px; 
+        width: 55%; 
+        font-size: 15px;     
+        color: #000;
+        border-top: 1px solid;
+        border-bottom: 1px solid; 
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    .card h3{
+        cursor: pointer;
+        border-top: 1px solid;
+        border-bottom: 1px solid;
+        text-transform: uppercase;
+        color: #000;
+    }
+    .container h2{
+        text-align: center;
+    }
+    .grid{
+        overflow: hidden;
+    }
+    .grid img{
+        object-fit: cover;
+        width: 100%;
+        height: 300px;
+        transition: transform 0.5s ease;
+    }
+    .grid img:hover{
+        transform: scale(1.1);
+    }
+    .container h2{
+        font-family: Island Moments,cursive;
+        font-size: 85px;
+    }
+</style>
+<body>
+    <div class="container mt-1">
+        <div class="d-flex justify-content-between align-items-center">
+            <a href="index.html">
+                <img src="img/logo.jpg" alt="Logo" style="height: 100px; width: 100%;">
+            </a>
+            <div class="row" style="display: inline;text-align: center;">
+              <div>
+                <div class="icon-card">
+                  <a href="giohang.html">
+                    <ion-icon name="cart-outline"></ion-icon>
+                  </a>
+                </div>
+              </div>
+              <div class="login">
+                <div>
+                  <div class="icon-login">
+                    <button class="account" data-toggle="modal" data-target="#loginModal">
+                      <ion-icon name="person-outline"></ion-icon>
+                    </button>
+                  </div>
+              
+                  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="loginModalLabel">Đăng Nhập</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span><ion-icon name="close-outline"></span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="form-box login">
+                            <h2>Đăng Nhập</h2>
+                            <form>
+                              <div class="input-box">
+                                <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                                <input type="email" required>
+                                <label>Email</label>
+                              </div>
+                              <div class="input-box">
+                                <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                                <input type="password" required>
+                                <label>Mật khẩu</label>
+                              </div>
+                              <div class="remember-forgot">
+                                <label><input type="checkbox">Nhớ mật khẩu</label>
+                                <a href="#">Quên mật khẩu?</a>
+                              </div>
+                              <button type="submit" class="btn-1">Đăng Nhập</button>
+                            </form>
+                            <div class="login-register text-center mt-3">
+                              <p>Tạo tài khoản mới? <a href="#" data-toggle="modal" data-target="#registerModal" data-dismiss="modal">Đăng ký</a></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="registerModalLabel">Đăng Kýr</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="form-box register">
+                            <h2>Đăng Ký</h2>
+                            <form>
+                              <div class="input-box">
+                                <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                                <input type="text" required>
+                                <label>Họ tên</label>
+                              </div>
+                              <div class="input-box">
+                                <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                                <input type="email" required>
+                                <label>Email</label>
+                              </div>
+                              <div class="input-box">
+                                <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                                <input type="password" required>
+                                <label>Mật khẩu</label>
+                              </div>
+                              <div class="remember-forgot">
+                                <label><input type="checkbox">Tôi đồng ý với các điều khoản và điều kiện</label>
+                              </div>
+                              <button type="submit" class="btn-1">Đăng Ký</button>
+                            </form>
+                            <div class="login-register text-center mt-3">
+                              <p>Tôi đã có tài khoản? <a href="#" data-toggle="modal" data-target="#loginModal" data-dismiss="modal">Đăng Nhập</a></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <button type="button" class="btn btn-secondary dropdown-toggle mx-auto" data-toggle="dropdown">
+                            TẤT CẢ SẢN PHẨM
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="banhsinhnhat.html">Bánh Sinh Nhật</a></li>
+                            <li><a class="dropdown-item" href="banhmy.html">Bánh Mỳ</a></li>
+                            <li><a class="dropdown-item" href="douong.html">Đồ Uống</a></li>
+                            <li><a class="dropdown-item" href="banhdacsan.html">Đặc sản Paris Gâteaux</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sanpham.html">Sản phẩm</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gioithieu.html">Giới thiệu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="lienhe.html">Liên hệ</a> 
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="danhgia.html">Đánh giá từ khách hàng</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="chinhsachHTkhachhang.html">Chính sách và điều khoản</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container my-4">
+        <div class="row ">
+            <!-- Đồ Uống -->
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <a href="douong.html"><img src="https://aglobal.vn/upload/images/%C4%91%E1%BB%93%20u%E1%BB%91ng%20kh%C3%B4ng%20c%E1%BB%93n%20l%C3%A0%20g%C3%AC.jpg" class="card-img-top" alt="Đồ Uống"></a>
+                    <div class="carousel-caption">
+                        <h3>Đồ Uống</h3>
+                        <a href="douong.html" class="btn btn-custom">Xem Tiếp</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Bánh Sinh Nhật -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <a href="banhsinhnhat.html"><img src="https://thuhuongcake.vn/wp-content/uploads/2024/01/Banh-kem-sinh-nhat-dau-tay-3.webp" class="card-img-top" alt="Bánh Sinh Nhật"></a>
+                    <div class="carousel-caption">
+                        <h3>Bánh Sinh Nhật</h3>
+                        <a href="banhsinhnhat.html" class="btn btn-custom">Xem Tiếp</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Bánh Mỳ -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <a href="banhmy.html"><img src="https://i.ytimg.com/vi/vLEzbb1CAQU/maxresdefault.jpg"class="card-img-top" alt="Bánh Mỳ"></a>
+                    <div class="carousel-caption">
+                        <h3>Bánh Mỳ</h3>
+                        <a href="banhmy.html" class="btn btn-custom">Xem Tiếp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <a href="banhdacsan.html"><img src="https://mms.img.susercontent.com/vn-11134513-7r98o-lsu4xxdgd29w18@resize_ss1242x600!@crop_w1242_h600_cT" alt="Đặc sản Paris Gâteaux"></a>
+                    <div class="carousel-caption">
+                        <h3>Đặc sản Paris Gâteaux</h3>
+                        <a href="banhdacsan.html" class="btn btn-custom">Xem Tiếp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-4">
+        <div>
+            <h2>Bánh Sinh Nhật</h2>
+        </div>
+        <div class="row grid my-4">
+            <div class="col-md-3">
+                <img src="img/cake7copy.jpg" alt="Mochi Matcha">
+                <h4>Mochi Matcha</h4>
+            </div>
+            <div class="col-md-3">
+                <img src="img/cake1.2copy.jpg" alt="Tiramisu">
+                <h4>Tiramisu</h4>
+            </div>
+            <div class="col-md-3">
+                <img src="img/cake5copy.jpg" alt="Fruit Almonds">
+                <h4>Fruit Almonds</h4>
+            </div>
+            <div class="col-md-3">
+                <img src="img/cake9copy.jpg" alt="Mousse chanh leo">
+                <h4>Mousse chanh leo</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-4">
+        <div>
+            <h2>Bánh Mỳ</h2>
+        </div>
+        <div class="row grid my-4">
+            <div class="col-md-4">
+                <img src="img/bread11.jpg" alt="Mochi Matcha">
+                <h4>Croissant Socola</h4>
+            </div>
+            <div class="col-md-4">
+                <img src="img/bread3.jpg" alt="Tiramisu">
+                <h4>Mexico đan mạch</h4>
+            </div>
+            <div class="col-md-4">
+                <img src="img/bread8.jpg" alt="Fruit Almonds">
+                <h4>Cream Cheese Socola</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-4">
+        <div>
+            <h2>Đồ Uống</h2>
+        </div>
+        <div class="row grid my-4">
+            <div class="col-md-3">
+                <img src="img/cafe1.jpg" alt="Mochi Matcha">
+                <h4>Cà phê sữa</h4>
+            </div>
+            <div class="col-md-3">
+                <img src="img/cafe5.jpg" alt="Tiramisu">
+                <h4>Cà phê chồn</h4>
+            </div>
+            <div class="col-md-3">
+                <img src="img/cafe3.jpg" alt="Fruit Almonds">
+                <h4>Cappuchino</h4>
+            </div>
+            <div class="col-md-3">
+                <img src="img/cafe6.jpg" alt="Mousse chanh leo">
+                <h4>Cà phê Espresso</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-4">
+        <div>
+            <h2>Đặc Sản Paris Gateaux </h2>
+        </div>
+        <div class="row grid my-4">
+            <div class="col-md-3">
+                <img src="img/sukem1.jpg" alt="Mochi Matcha">
+                <h4>Sukem puff</h4>
+            </div>
+            <div class="col-md-3">
+                <img src="img/sukem3.jpg" alt="Tiramisu">
+                <h4>Sukem puff socola</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-4">
+        <div>
+            <h2>Đặc sản Châu Âu</h2>
+        </div>
+        <div class="row grid my-4">
+            <div class="col-md-3">
+                <img src="http://parisgateaux.vn/wp-content/uploads/2024/06/Dau-cat-300x300.jpg" alt="Mochi Matcha">
+                <h4>Mousse Dâu Tây Sữa Dừa</h4>
+            </div>
+            <div class="col-md-3">
+                <img src="http://parisgateaux.vn/wp-content/uploads/2024/02/SAKURA-300x300.jpg" alt="Tiramisu">
+                <h4>Sakura Mousse</h4>
+            </div>
+            <div class="col-md-3">
+                <img src="http://parisgateaux.vn/wp-content/uploads/2020/09/C362-Dai-Ngan-Duc-300x300.jpg" alt="Fruit Almonds">
+                <h4>Gato cắt Đại Ngàn (Đức)</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-4">
+        <div>
+            <h2>Gato Đặc Biệt</h2>
+        </div>
+        <div class="row grid my-4">
+            <div class="col-md-3">
+                <img src="http://parisgateaux.vn/wp-content/uploads/2018/08/C341-Gato-mat-ong-thien-nhien-300x300.jpg" alt="Mochi Matcha">
+                <h4>Gato Mật ong thiên nhiên</h4>
+            </div>
+            <div class="col-md-3">
+                <img src="http://parisgateaux.vn/wp-content/uploads/2022/11/Mousse-Socola-300x300.jpg" alt="Tiramisu">
+                <h4>Bánh Mousse Socola</h4>
+            </div>
+            <div class="col-md-3">
+                <img src="http://parisgateaux.vn/wp-content/uploads/2021/11/z2939898853011_f7c4f97c764891abb5f0e665856b7f6d-300x300.jpg" alt="Fruit Almonds">
+                <h4>Bánh Gato Cuộn Socola</h4>
+            </div>
+            <div class="col-md-3">
+                <img src="http://parisgateaux.vn/wp-content/uploads/2024/11/Matcha-300x300.jpg" alt="Fruit Almonds">
+                <h4>Mousse Matcha</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-4">
+        <div>
+            <h2>Trà Nhập Khẩu</h2>
+        </div>
+        <div class="row grid my-4">
+            <div class="col-md-3">
+                <img src="http://parisgateaux.vn/wp-content/uploads/2022/11/hong-tra-srilaka-300x300.jpg" alt="Mochi Matcha">
+                <h4>Hồng Trà Srilanka</h4>
+            </div>
+            <div class="col-md-3">
+                <img src="http://parisgateaux.vn/wp-content/uploads/2022/11/xanh-nhai-hong-que-300x300.jpg" alt="Tiramisu">
+                <h4>Trà xanh nhài hồng quế</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-info mt-5">
+        <footer class="bg-body-tertiary text-center text-lg-start p-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 support">
+                        <h5 class="text-uppercase">CÔNG TY CỔ PHẦN PARIS GÂTEAUX VIỆT NAM</h5>
+                        <ul>
+                            <li>Số ĐKKD 0101505529 Ngày cấp 07/06/2004 của Sở kế hoạch và Đầu tư Thành phố Hà Nội.</li>
+                            <li>Địa chỉ: LÔ A2 - CN7 CỤM CN TỪ LIÊM, PHƯỜNG PHƯƠNG CANH, QUẬN NAM TỪ LIÊM, THÀNH PHỐ HÀ NỘI.</li>
+                            <li>Hotline: 02432001399 - 0936 336 806</li>
+                            <li>Email: customerservices@parisgateaux.vn</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-12 mb-4 support">
+                        <h5 class="text-uppercase">Hỗ trợ khách hàng</h5>
+                        <ul>
+                            <li><a href="http://parisgateaux.vn/chinh-sach-doi-tra/">Chính sách đổi trả</a></li>
+                            <li><a href="http://parisgateaux.vn/chinh-sach-giao-nhan/">Chính sách giao nhận</a></li>
+                            <li><a href="http://parisgateaux.vn/chinh-sach-bao-mat-thong-tin/">Chính sách bảo mật thông tin</a></li>
+                            <li><a href="http://parisgateaux.vn/quy-trinh-xu-ly-khieu-nai/">Quy trình xử lí khiếu nại</a></li>
+                            <li><a href="http://parisgateaux.vn/lien-he/">Liên hệ</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3">
+                        <h5>Chăm sóc khách hàng</h5>
+                        <img src="http://parisgateaux.vn/wp-content/uploads/2022/12/icon-phone.png" width="7%"><span>0343107273</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="index.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Island+Moments&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
